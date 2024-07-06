@@ -19,6 +19,12 @@ export default function Navbar() {
                         </div>
                     </div>
                     <div className="content flex items-center mr-5 gap-10">
+                    <button className="font-bold text-lg bg-black text-white mr-5 px-4 py-2 rounded-3xl hover:bg-gray-700" onClick={() => signIn('google')}>
+                                Featured Content
+                            </button>
+                    <button className="font-bold text-lg bg-black text-white px-4 py-2 rounded-3xl hover:bg-gray-700" onClick={() => router.push("/myblogs")}>
+                            MyBlogs
+                        </button>
                         <button className="font-bold text-lg bg-black text-white px-4 py-2 rounded-3xl hover:bg-gray-700" onClick={() => router.push("/createblog")}>
                             Create Blog
                         </button>
@@ -31,14 +37,10 @@ export default function Navbar() {
             ) : (
                 <>
                     <div className="flex justify-between m-auto gap-10 items-center">
-                        <h1 className="font-bold text-2xl m-5">Bloogoo!!</h1>
-                        <div>
-                            <button className="font-bold text-lg bg-black text-white mr-5 px-4 py-2 rounded-3xl hover:bg-gray-700" onClick={() => signIn('google')}>
-                                Featured Content
-                            </button>
-                            <button className="font-bold text-lg bg-black text-white mr-5 px-4 py-2 rounded-3xl hover:bg-gray-700" onClick={() => signIn('google')}>
-                                Sign In
-                            </button>
+                        <h1 className="font-bold text-2xl m-5"><Link href={"/"}>Bloogoo!!</Link></h1>
+                        <div className="flex">
+                            <button className="font-bold text-lg bg-black text-white mr-5 px-4 py-2 rounded-3xl hover:bg-gray-700" onClick={() => signIn('google')}>Sign In</button>
+                            {/* <img src="user.svg" alt="" /> */}
                         </div>
                     </div>
 

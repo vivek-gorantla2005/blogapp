@@ -1,7 +1,6 @@
 'use client'
 import { connectDB } from "@/utils/db";
 import { useSession, signIn, signOut } from 'next-auth/react'
-import BlogCard from "@/components/blogcard";
 export default function Home() {
   return (
     <>
