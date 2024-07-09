@@ -34,7 +34,9 @@ const Page = () => {
         const result = await res.json();
         toast.success('Blog post created successfully!', { autoClose: 1000 });
         setFormData({ title: '', content: '' });
-        // You can redirect or show a success message here
+        setTimeout(()=>{
+          router.push('/myblogs');
+        },1500);
       } else {
         toast.error('Failed to submit blog post.');
       }

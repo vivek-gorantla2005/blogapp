@@ -39,7 +39,7 @@ const Page = () => {
     {error && <p className="text-red-500">{error}</p>}
     {blog.length > 0 ? (
         blog.map(item => (
-            <Card key={item._id} title={item.title} content={item.content}/>
+            <Card key={item._id} title={item.title} content={item.content} id={item._id}/>
         ))
     ) : (
         <p className="mt-5">No blogs found</p>

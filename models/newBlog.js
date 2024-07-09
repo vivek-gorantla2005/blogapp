@@ -6,6 +6,7 @@ const newblog = new Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
+
 const Blog = models.Blog || model('Blog', newblog);
 
 export default Blog;

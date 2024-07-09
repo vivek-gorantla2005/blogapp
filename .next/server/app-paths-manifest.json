@@ -1,0 +1,10 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/myblogs/page": "app/myblogs/page.js",
+  "/detail/page": "app/detail/page.js",
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/api/blogs/route": "app/api/blogs/route.js",
+  "/api/updateblog/route": "app/api/updateblog/route.js",
+  "/createblog/page": "app/createblog/page.js"
+}

@@ -6,7 +6,6 @@ export async function GET(req) {
     const userid = url.searchParams.get('userid');
 
     if(userid){
-        console.log(userid)
         await connectDB();
         const user = await Blog.find({author: userid})
         if(user){
@@ -18,6 +17,4 @@ export async function GET(req) {
     }else{
         return NextResponse.json({error: 'Invalid request'})
     }
-    
-
 }

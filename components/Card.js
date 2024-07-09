@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Card = ({ title, content }) => {
+const Card = ({ title, content,id }) => {
     const [showPopup, setShowPopup] = useState(false);
 
     const openPopup = () => {
@@ -11,13 +11,20 @@ const Card = ({ title, content }) => {
         setShowPopup(false);
     };
 
+    const handleClick = () => {
+        const encodedTitle = btoa(title);
+        const encodedContent = btoa(content);
+        const url = `/detail?title=${encodedTitle}&content=${encodedContent}&id=${id}`;
+        window.open(url, '_blank');
+    };
+
     return (
         <div className='flex justify-between gap-5'>
-            <div className="my-5 p-5">
+            <div className="my-5 p-5 cursor-pointer" onClick={handleClick}>
                 <h2 className="text-xl font-bold mb-2">TITLE: {title}</h2>
                 <p className="text-gray-600">{content}</p>
             </div>
-            <div className='flex gap-5 items-center '>
+            <div className='flex gap-5 items-center'>
                 <div className="likes flex gap-1"><img src="like.svg" alt="like"/>0</div>
                 <div className="dislikes flex gap-1"><img src="dislike.svg" alt="dislike" />0</div>
                 <div className="comments flex gap-1 cursor-pointer" onClick={openPopup}><img src="comments.svg" alt="comment" />0</div>
